@@ -1,4 +1,3 @@
-"use client"
 
 import { PokemonService } from '@/common';
 import { Header } from '@/components';
