@@ -1,8 +1,9 @@
 import { Image, Space, Tag } from 'antd';
 import styles from './page.module.css';
+import { Pokemon } from '@/types';
 
 
-export default function CardDetails({ data }: { data: any }) {
+export default function CardDetails({ data }: { data: Pokemon }) {
 
     return (
         <div className={styles.pokemon_container}>
@@ -18,17 +19,17 @@ export default function CardDetails({ data }: { data: any }) {
                 <div className={styles.base_experience}><p>Power</p>{data.base_experience}</div>
                 <div>
                     <h3>Abilities</h3>
-                    <Space size={[0, 8]} wrap> {data.abilities?.map((item: any, index: any) => (
-                        <Tag color="success" key={index}>{item.ability.name}</Tag>
+                    <Space size={[0, 8]} wrap> {data.abilities?.map((item) => (
+                        <Tag color="success" key={item.ability.name}>{item.ability.name}</Tag>
                     ))}
                     </Space>
                 </div>
                 <div>
                     <h3>Type</h3>
                     <div className={styles.types_container}>
-                        {data.types?.map((item: any, index: any) => (
+                        {data.types?.map((item) => (
                             <span
-                                key={index}
+                                key={item.type.name}
                                 className={`${styles.type} ${styles['type_' + item.type.name]}`}
                             >
                                 {item.type.name}

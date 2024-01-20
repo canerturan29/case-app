@@ -3,7 +3,6 @@
 import { PokemonCard } from '@/components';
 import { Pokemon } from '@/types';
 import { List } from 'antd';
-import { useState } from 'react';
 import styles from './pokemonList.module.css';
 
 export default function PokemonList({ count, pokemonList, pageSize, offset }: IProps) {
@@ -27,10 +26,6 @@ export default function PokemonList({ count, pokemonList, pageSize, offset }: IP
                 responsive: true,
                 style: { textAlign: 'center' },
                 showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
-
-
-
-
             }}
             renderItem={(item) => (
                 <List.Item key={item.name}>
